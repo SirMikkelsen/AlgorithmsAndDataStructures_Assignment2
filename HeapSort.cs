@@ -76,6 +76,9 @@ namespace assignment_2_arraysorter
 
         }
 
+
+
+
         public static void swap(T[] array, int pos0, int pos1)
         {
             T tmpVal = array[pos0];
