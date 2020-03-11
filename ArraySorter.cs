@@ -4,10 +4,10 @@ using System.Text;
 
 namespace assignment_2_arraysorter
 {
-   public class ArraySorter<T> where T : IComparable
+    public class ArraySorter<T> where T : IComparable<T>
     {
-       
 
+        public T[] Items { get; private set; }
         private int _size;
         public T[] _items;
         private int _start;
