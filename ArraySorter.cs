@@ -9,7 +9,7 @@ namespace assignment_2_arraysorter
 
         public T[] Items { get; private set; }
         private int _size;
-        public T[] _items;
+     //   public T[] Items;
         private int _start;
         private int _end;
 
@@ -24,7 +24,7 @@ namespace assignment_2_arraysorter
         }
         public ArraySorter(T[] items, int size , IComparer<T> comparer = null) 
         {
-            _items = items;
+            Items = items;
             _size = size;
             BuildHeap();
             _comparer = comparer;
@@ -106,16 +106,16 @@ namespace assignment_2_arraysorter
         public void Enqueue(T item) 
         {
 
-            _items[_end = _end + 1] = item;
-            _end = _end % _items.Length;
+            Items[_end = _end + 1] = item;
+            _end = _end % Items.Length;
         
         }
         
         public T Dequeue() 
         {
-            T item = _items[_start = _start + 1];
+            T item = Items[_start = _start + 1];
 
-            _start = _start % _items.Length;
+            _start = _start % Items.Length;
 
             return item;
         }
@@ -147,9 +147,9 @@ namespace assignment_2_arraysorter
 
         private void Swap(int idxA, int idxB)
         {
-            var tmp = _items[idxA];
-            _items[idxA] = _items[idxB];
-            _items[idxB] = tmp;
+            var tmp = Items[idxA];
+            Items[idxA] = Items[idxB];
+            Items[idxB] = tmp;
         }
 
         private void Heapify(int length, int i)
@@ -159,11 +159,11 @@ namespace assignment_2_arraysorter
             int left = i * 2 + 1;
             int right = i * 2 + 2;
 
-            if (left < length && Less(_items[largest], _items[left]))
+            if (left < length && Less(Items[largest], Items[left]))
             {
                 largest = left;
             }
-            if (right < length && Less(_items[largest], _items[right]))
+            if (right < length && Less(Items[largest], Items[right]))
             {
                 largest = right;
             }
